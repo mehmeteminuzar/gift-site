@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Sen Çok Seviliyorsun</title>
+    <title>Sen Çok Seviliyorsun 💖</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,44 +48,47 @@
         }
     </style>
 </head>
-    <audio controls autoplay loop>
+<body>
+
+<!-- MÜZİK DOSYASI -->
+<audio id="muzik" loop>
     <source src="muzik.mp3" type="audio/mpeg">
 </audio>
-<body>
 
 <div class="card">
     <h2>Hoş Geldin 💖</h2>
     <p>İsim ve soyismini yazar mısın?</p>
+
     <input type="text" id="name" placeholder="İsim Soyisim">
     <br>
-    <button onclick="showLove()">Göster</button>
+
+    <button onclick="showLove(); document.getElementById('muzik').play();">
+        Göster
+    </button>
 
     <div id="message"></div>
 </div>
 
 <script>
-    function showLove() {
-        const name = document.getElementById("name").value.trim();
-        const messageDiv = document.getElementById("message");
+function showLove() {
+    const name = document.getElementById("name").value.trim();
+    const messageDiv = document.getElementById("message");
 
-        if (name === "") {
-            alert("Lütfen isim ve soyisim gir ❤️");
-            return;
-        }
-
-        messageDiv.style.display = "block";
-        messageDiv.innerHTML = `
-            <strong>${name}</strong>,<br><br>
-            ne kadar sevildiğini unutmuşsun 💕<br><br>
-            Hayatındaki insanlar seni düşündüğünden çok daha fazla önemsiyor,
-            gülüşün, kalbin ve varlığın çok değerli 🌸<br><br>
-            İyi ki varsın 💖
-        `;
+    if (name === "") {
+        alert("Lütfen isim ve soyisim gir ❤️");
+        return;
     }
+
+    messageDiv.style.display = "block";
+    messageDiv.innerHTML = `
+        <strong>${name}</strong>,<br><br>
+        ne kadar sevildiğini unutmuşsun 💕<br><br>
+        Hayatındaki insanlar seni düşündüğünden çok daha fazla önemsiyor,
+        gülüşün, kalbin ve varlığın çok değerli 🌸<br><br>
+        İyi ki varsın 💖
+    `;
+}
 </script>
 
 </body>
 </html>
-<audio id="muzik">
-    <source src="muzik.mp3" type="audio/mpeg">
-</audio>
